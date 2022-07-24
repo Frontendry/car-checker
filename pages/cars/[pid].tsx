@@ -1,5 +1,4 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { ParsedUrlQuery } from "querystring";
 
 // Interfaces
 import {

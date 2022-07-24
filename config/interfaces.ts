@@ -157,3 +157,11 @@ export interface ContentSegmentProps {
     | BrandsAndCarsContextDataType["carsList"]
     | undefined;
 }
+
+export interface CarExtraDetailsProps {
+  carDetails: CarExtraDetails;
+}
+
+export interface popularMakeCarsProps {
+  querySearch: CarDetails[];
+}
