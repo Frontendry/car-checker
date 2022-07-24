@@ -1,3 +1,13 @@
+export interface ContextChildren {
+  children: JSX.Element | JSX.Element[];
+}
+
+export interface PaginationDetails {
+  currentPage: number;
+  pageSize: number;
+  total: number;
+}
+
 export interface BrandDetails {
   id: number;
   name: string;
@@ -127,4 +137,19 @@ export interface CarExtraDetails {
       };
     };
   };
+}
+
+export interface BrandsAndCarsContextData {
+  carsList: {
+    result: CarDetails[] | null;
+    pagination: PaginationDetails | null;
+  };
+  popularMakes: {
+    makeList: BrandDetails[] | null;
+    pagination: PaginationDetails | null;
+  };
+}
+
+export interface ContentSegmentProps {
+  segmentTitle: string;
 }

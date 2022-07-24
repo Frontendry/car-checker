@@ -231,9 +231,9 @@ input[type="submit"] {
 }
 
 .logo_agile h1 a img {
-  position: absolute;
+  /* position: absolute;
   left: -40%;
-  top: -23px;
+  top: -23px; */
 }
 
 .logo_agile {
