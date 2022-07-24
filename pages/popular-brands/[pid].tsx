@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
+import { INT_API_POPULAR_BRAND_CARS } from "../../config/constant";
+
 const fetcher = async (url: string) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -11,18 +13,21 @@ const fetcher = async (url: string) => {
   return data;
 };
 
-export default function Person() {
+const PopularMake = () => {
   const { query } = useRouter();
   const { data, error } = useSWR(
-    () => query.pid && `/api/popular-brands/${query.pid}`,
+    () => query.pid && `${INT_API_POPULAR_BRAND_CARS}/${query.pid}`,
     fetcher
   );
 
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
+  console.log(data);
   return <div>test</div>;
-}
+};
+
+export default PopularMake;
 
 /* 
 // Not working

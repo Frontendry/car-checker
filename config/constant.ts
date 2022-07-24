@@ -4,3 +4,4 @@ export const POPULAR_MAKES = "/make?popular=true";
 export const CARS_LIST = "/car/search";
 export const SINGLE_CAR = "/car";
 export const SINGLE_CAR_MEDIA = "/car_media?carId=";
+export const INT_API_POPULAR_BRAND_CARS = "/api/popular-brands";

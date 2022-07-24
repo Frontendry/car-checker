@@ -1,4 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
 
 // Interfaces
 import {
@@ -11,12 +12,28 @@ import {
 import axiosModules from "../../config/axios";
 import { CARS_LIST, SINGLE_CAR } from "../../config/constant";
 
+// Components
+import TopSection from "../../components/TopSection";
+import LogoSearchSection from "../../components/LogoSearchSection";
+import ContentSectionCarSingle from "../../components/ContentSectionCarSingle";
+
 // Axios Instance
 const { axios } = axiosModules;
 
 const CarPost = (props: CarExtraDetailsProps) => {
   const carDetailsData = props.carDetails;
-  return <div>{carDetailsData.carName}</div>;
+  return (
+    <div>
+      <Head>
+        <title>Car Checker</title>
+        <meta name="description" content="Welcome to our website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <TopSection />
+      <LogoSearchSection />
+      <ContentSectionCarSingle />
+    </div>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

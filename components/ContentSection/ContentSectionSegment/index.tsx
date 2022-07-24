@@ -18,7 +18,11 @@ const ContentSectionSegment = ({ segmentTitle, data }: ContentSegmentProps) => {
           {makeListKeyChecker
             ? data.makeList &&
               data.makeList.map((item) => (
-                <div className="col-md-4 product-men mt-5" key={item.id}>
+                <div
+                  className="col-md-4 product-men mt-5"
+                  key={item.id}
+                  id={`brand_${item.id}`}
+                >
                   <div className="men-pro-item simpleCart_shelfItem">
                     <div className="men-thumb-item text-center">
                       <Image
@@ -50,7 +54,11 @@ const ContentSectionSegment = ({ segmentTitle, data }: ContentSegmentProps) => {
             : data !== undefined &&
               data.result &&
               data.result.map((item) => (
-                <div className="col-md-4 product-men mt-5" key={item.id}>
+                <div
+                  className="col-md-4 product-men mt-5"
+                  key={item.id}
+                  id={`vehicle_${item.id}`}
+                >
                   <div className="men-pro-item simpleCart_shelfItem">
                     <div className="men-thumb-item text-center">
                       <Image
