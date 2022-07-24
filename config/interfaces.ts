@@ -139,17 +139,21 @@ export interface CarExtraDetails {
   };
 }
 
-export interface BrandsAndCarsContextData {
-  carsList: {
-    result: CarDetails[] | null;
-    pagination: PaginationDetails | null;
-  };
+export interface BrandsAndCarsContextDataType {
   popularMakes: {
     makeList: BrandDetails[] | null;
+    pagination: PaginationDetails | null;
+  };
+  carsList: {
+    result: CarDetails[] | null;
     pagination: PaginationDetails | null;
   };
 }
 
 export interface ContentSegmentProps {
   segmentTitle: string;
+  data:
+    | BrandsAndCarsContextDataType["popularMakes"]
+    | BrandsAndCarsContextDataType["carsList"]
+    | undefined;
 }

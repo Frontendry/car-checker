@@ -1,5 +1,4 @@
-// Next and React Modules
-import React, { createContext } from "react";
+// Next Modules
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 
@@ -8,25 +7,18 @@ import axiosModules from "../config/axios";
 import { POPULAR_MAKES, CARS_LIST } from "../config/constant";
 
 // Interfaces
-import { BrandsAndCarsContextData } from "../config/interfaces";
+import { BrandsAndCarsContextDataType } from "../config/interfaces";
 
 // Context
-import {
-  BrandsAndCarsContextProvider,
-  useBrandsAndCarsContextContext,
-} from "../context/brandsAndCarsContext";
+import brandsAndCarsContext from "../context/brandsAndCarsContext";
 
 // Components
 import TopSection from "../components/TopSection";
 import LogoSearchSection from "../components/LogoSearchSection";
 import ContentSection from "../components/ContentSection";
 
-const Home = (props: BrandsAndCarsContextData) => {
-  const { setBrandsAndCarsRes } = useBrandsAndCarsContextContext();
-
-  setBrandsAndCarsRes(props);
-
-  console.log(props);
+const Home = (props: BrandsAndCarsContextDataType) => {
+  const resData: BrandsAndCarsContextDataType = props;
 
   return (
     <div>
@@ -35,13 +27,11 @@ const Home = (props: BrandsAndCarsContextData) => {
         <meta name="description" content="Welcome to our website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <TopSection />
-
-      <BrandsAndCarsContextProvider>
+      <brandsAndCarsContext.Provider value={resData}>
+        <TopSection />
         <LogoSearchSection />
         <ContentSection />
-      </BrandsAndCarsContextProvider>
+      </brandsAndCarsContext.Provider>
     </div>
   );
 };

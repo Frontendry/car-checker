@@ -1,3 +1,17 @@
+import { createContext } from "react";
+
+// Interfaces and Types
+import { BrandsAndCarsContextDataType } from "../config/interfaces";
+
+const brandsAndCarsContext = createContext<BrandsAndCarsContextDataType | null>(
+  null
+);
+
+export default brandsAndCarsContext;
+
+/* 
+Working as well
+
 // Import React Stuff
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
@@ -37,9 +51,10 @@ export const BrandsAndCarsContextProvider = ({ children }: ContextChildren) => {
 
 export const useBrandsAndCarsContextContext = () => {
   return useContext(brandsAndCarsContext);
-};
+}; */
 
 /* 
+
 Working well
 
 // Interfaces and Types

@@ -1,10 +1,10 @@
 // Node Modules
-import useSwr from "swr";
 import Image from "next/future/image";
 
+// Interfaces
 import { ContentSegmentProps } from "../../../config/interfaces";
 
-const ContentSectionSegment = ({ segmentTitle }: ContentSegmentProps) => {
+const ContentSectionSegment = ({ segmentTitle, data }: ContentSegmentProps) => {
   return (
     <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
       <h3 className="heading-tittle text-center font-italic">{segmentTitle}</h3>

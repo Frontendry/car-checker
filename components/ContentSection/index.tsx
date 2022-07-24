@@ -1,7 +1,19 @@
+// React Modules
+import { useContext } from "react";
+
+// Context
+import brandsAndCarsContext from "../../context/brandsAndCarsContext";
+
+// Components
 import ContentSectionSegment from "./ContentSectionSegment";
 import ContentSectionTitle from "./ContentSectionTitle";
 
 const ContentSection = () => {
+  const brandsAndCarsContextData = useContext(brandsAndCarsContext);
+
+  const popularMakesData = brandsAndCarsContextData?.popularMakes;
+
+  console.log(popularMakesData);
   return (
     <div className="ads-grid py-sm-5 py-4">
       <div className="container py-xl-4 py-lg-2">
@@ -10,7 +22,10 @@ const ContentSection = () => {
         <div className="row">
           <div className="agileinfo-ads-display col-lg-9">
             <div className="wrapper">
-              <ContentSectionSegment segmentTitle="Popular Car Brands" />
+              <ContentSectionSegment
+                data={popularMakesData}
+                segmentTitle="Popular Car Brands"
+              />
             </div>
           </div>
         </div>
