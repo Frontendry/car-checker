@@ -12,8 +12,6 @@ const ContentSection = () => {
   const brandsAndCarsContextData = useContext(brandsAndCarsContext);
 
   const popularMakesData = brandsAndCarsContextData?.popularMakes;
-
-  console.log(popularMakesData);
   return (
     <div className="ads-grid py-sm-5 py-4">
       <div className="container py-xl-4 py-lg-2">
