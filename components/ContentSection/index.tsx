@@ -12,6 +12,8 @@ const ContentSection = () => {
   const brandsAndCarsContextData = useContext(brandsAndCarsContext);
 
   const popularMakesData = brandsAndCarsContextData?.popularMakes;
+  const carListData = brandsAndCarsContextData?.carsList;
+
   return (
     <div className="ads-grid py-sm-5 py-4">
       <div className="container py-xl-4 py-lg-2">
@@ -23,6 +25,11 @@ const ContentSection = () => {
               <ContentSectionSegment
                 data={popularMakesData}
                 segmentTitle="Popular Car Brands"
+              />
+
+              <ContentSectionSegment
+                data={carListData}
+                segmentTitle="Cars for Sale"
               />
             </div>
           </div>
