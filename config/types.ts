@@ -1,3 +1,6 @@
-import { BrandsAndCarsContextData } from "./interfaces";
+import { BrandsAndCarsContextDataType, CarDetails } from "./interfaces";
 
-export type brandsAndCarsContextHook = () => BrandsAndCarsContextData | null;
+export type brandsAndCarsContextHook =
+  () => BrandsAndCarsContextDataType | null;
+
+export type BrandsContextDataType = CarDetails[];

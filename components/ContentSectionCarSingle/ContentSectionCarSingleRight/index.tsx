@@ -39,12 +39,6 @@ const ContentSectionCarSingleRight = () => {
     "Vehicle ID": carDetails?.id,
   };
 
-  /*   const vehicleDescriptionKeys = Object.keys(
-    vehicleDescription
-  ) as (keyof typeof vehicleDescription)[];
-
-  console.log(vehicleDescriptionKeys); */
-
   const vehicleDescriptionEntries = Object.entries(vehicleDescription);
 
   return (

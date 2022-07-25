@@ -13,6 +13,8 @@ const RenderMedia = () => {
 
   const carMedia = singleCarData?.singleCarMediaData?.carMediaList;
 
+  console.log(carMedia);
+
   return (
     <>
       {carMedia &&

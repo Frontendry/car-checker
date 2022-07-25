@@ -1,5 +1,6 @@
 // Node Modules
 import Image from "next/image";
+import Link from "next/link";
 
 // Interfaces
 import { ContentSegmentProps } from "../../../config/interfaces";
@@ -34,18 +35,25 @@ const ContentSectionSegment = ({ segmentTitle, data }: ContentSegmentProps) => {
 
                       <div className="men-cart-pro">
                         <div className="inner-men-cart-pro">
-                          <a
-                            href="single.html"
-                            className="link-product-add-cart"
+                          <Link
+                            href={`/popular-brands/${encodeURIComponent(
+                              item.name
+                            )}`}
                           >
-                            Quick View
-                          </a>
+                            <a className="link-product-add-cart">Quick View</a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="item-info-product text-center border-top mt-4">
                       <h4 className="pt-1">
-                        <a href="#">{item.name}</a>
+                        <Link
+                          href={`/popular-brands/${encodeURIComponent(
+                            item.name
+                          )}`}
+                        >
+                          {item.name}
+                        </Link>
                       </h4>
                     </div>
                   </div>
@@ -70,18 +78,17 @@ const ContentSectionSegment = ({ segmentTitle, data }: ContentSegmentProps) => {
 
                       <div className="men-cart-pro">
                         <div className="inner-men-cart-pro">
-                          <a
-                            href="single.html"
-                            className="link-product-add-cart"
-                          >
-                            Quick View
-                          </a>
+                          <Link href={`/cars/${encodeURIComponent(item.id)}`}>
+                            <a className="link-product-add-cart">Quick View</a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="item-info-product text-center border-top mt-4">
                       <h4 className="pt-1">
-                        <a href="#">{item.title}</a>
+                        <Link href={`/cars/${encodeURIComponent(item.id)}`}>
+                          {item.title}
+                        </Link>
                       </h4>
                     </div>
                   </div>
