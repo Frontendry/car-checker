@@ -150,10 +150,6 @@ export interface BrandsAndCarsContextDataType {
   };
 }
 
-/* export interface BrandsContextDataType {
-  carsList: CarDetails[] | null;
-} */
-
 export interface ContentSegmentProps {
   segmentTitle: string;
   data:
