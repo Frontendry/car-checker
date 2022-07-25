@@ -5,6 +5,16 @@ import { useContext } from "react";
 
 import brandsContext from "../../../context/brandsContext";
 
+const NoVehicles = () => {
+  return (
+    <div className="text-center w-100">
+      <h4>
+        No cars availabe for this brand. <Link href="/">Go Back</Link>
+      </h4>
+    </div>
+  );
+};
+
 const ContentSectionSegment = () => {
   const relatedVehiclesData = useContext(brandsContext);
 
@@ -12,7 +22,7 @@ const ContentSectionSegment = () => {
     <>
       <div className="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
         <div className="row">
-          {relatedVehiclesData &&
+          {relatedVehiclesData && relatedVehiclesData.length ? (
             relatedVehiclesData.map((carItem) => (
               <div
                 className="col-md-4 product-men mt-5"
@@ -45,7 +55,10 @@ const ContentSectionSegment = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <NoVehicles />
+          )}
         </div>
       </div>
     </>

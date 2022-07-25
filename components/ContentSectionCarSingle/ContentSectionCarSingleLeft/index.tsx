@@ -1,6 +1,6 @@
 // Node Modules
-import { useContext } from "react";
-import Image from "next/future/image";
+import { useContext, useEffect } from "react";
+import Image from "next/image";
 
 // Context
 import singleCarContext from "../../../context/singleCarContext";
@@ -12,8 +12,6 @@ const RenderMedia = () => {
   const singleCarData = useContext(singleCarContext);
 
   const carMedia = singleCarData?.singleCarMediaData?.carMediaList;
-
-  console.log(carMedia);
 
   return (
     <>
