@@ -16,17 +16,14 @@ import brandsAndCarsContext from "../context/brandsAndCarsContext";
 import TopSection from "../components/TopSection";
 import LogoSearchSection from "../components/LogoSearchSection";
 import ContentSection from "../components/ContentSection";
+import PageHead from "../components/PageHead";
 
 const Home = (props: BrandsAndCarsContextDataType) => {
   const resData: BrandsAndCarsContextDataType = props;
 
   return (
     <div>
-      <Head>
-        <title>Car Checker</title>
-        <meta name="description" content="Welcome to our website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead />
       <brandsAndCarsContext.Provider value={resData}>
         <TopSection />
         <LogoSearchSection />

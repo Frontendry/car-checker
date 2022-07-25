@@ -1,18 +1,40 @@
-import useSWR from "swr";
+// Node Modules
+import { useContext, useState } from "react";
+import Image from "next/image";
 
-// Config
-import { SINGLE_CAR_MEDIA } from "../../../config/constant";
-import axiosModules from "../../../config/axios";
+// Context
+import singleCarContext from "../../../context/singleCarContext";
 
-const fetcher = async (url: string) => {
-  const { axios } = axiosModules;
-  const res = await axios.get(url);
-  const media = await res.data;
+// Interfaces
+import { mediaElementType } from "../../../config/interfaces";
 
-  if (res.status !== 200) {
-    throw new Error("Error on fetching data");
-  }
-  return media;
+const RenderMedia = () => {
+  const singleCarData = useContext(singleCarContext);
+
+  const carMedia = singleCarData?.singleCarMediaData?.carMediaList;
+
+  return (
+    <>
+      {carMedia &&
+        carMedia.map((mediaElement: mediaElementType) => (
+          <li
+            key={mediaElement.id}
+            id={`media_${mediaElement.id}`}
+            data-thumb={mediaElement.url}
+          >
+            <div className="thumb-image">
+              <Image
+                src={mediaElement.url}
+                alt={mediaElement.name}
+                width={256}
+                height={192}
+                className="img-fluid"
+              />
+            </div>
+          </li>
+        ))}
+    </>
+  );
 };
 
 const ContentSectionCarSingleLeft = () => {
@@ -21,8 +43,10 @@ const ContentSectionCarSingleLeft = () => {
       <div className="grid images_3_of_2">
         <div className="flexslider">
           <ul className="slides">
-            <li></li>
+            <RenderMedia />
           </ul>
+
+          <div className="clearfix"></div>
         </div>
       </div>
     </div>

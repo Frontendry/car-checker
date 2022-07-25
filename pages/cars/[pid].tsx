@@ -10,28 +10,31 @@ import {
 
 // Config
 import axiosModules from "../../config/axios";
-import { CARS_LIST, SINGLE_CAR } from "../../config/constant";
+import { SINGLE_CAR, SINGLE_CAR_MEDIA, CARS_LIST } from "../../config/constant";
+
+// Context
+import singleCarContext from "../../context/singleCarContext";
 
 // Components
 import TopSection from "../../components/TopSection";
 import LogoSearchSection from "../../components/LogoSearchSection";
 import ContentSectionCarSingle from "../../components/ContentSectionCarSingle";
+import PageHead from "../../components/PageHead";
 
 // Axios Instance
 const { axios } = axiosModules;
 
 const CarPost = (props: CarExtraDetailsProps) => {
-  const carDetailsData = props.carDetails;
+  const carPostDetails: CarExtraDetailsProps = props;
   return (
     <div>
-      <Head>
-        <title>Car Checker</title>
-        <meta name="description" content="Welcome to our website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead />
       <TopSection />
-      <LogoSearchSection />
-      <ContentSectionCarSingle />
+
+      <singleCarContext.Provider value={carPostDetails}>
+        <LogoSearchSection />
+        <ContentSectionCarSingle />
+      </singleCarContext.Provider>
     </div>
   );
 };
@@ -51,11 +54,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { pid } = context.params!;
-  const res = await axios.get(`${SINGLE_CAR}/${pid}`);
+  /*  const res = await axios.get(`${SINGLE_CAR}/${pid}`);
   const carDetails = (await res.data) as CarExtraDetails;
+ */
+
+  const endPoints = [`${SINGLE_CAR}/${pid}`, `${SINGLE_CAR_MEDIA}${pid}`];
+
+  const [singleCarRes, singleCarMediaRes] = await Promise.all(
+    endPoints.map((endPoint: string) => axios.get(endPoint))
+  );
+
+  const [singleCarData, singleCarMediaData] = await Promise.all([
+    singleCarRes.data,
+    singleCarMediaRes.data,
+  ]);
 
   // Pass post data to the page via props
-  return { props: { carDetails } };
+
+  return { props: { singleCarData, singleCarMediaData } };
 };
 
 export default CarPost;

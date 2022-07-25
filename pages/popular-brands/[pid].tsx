@@ -23,7 +23,6 @@ const PopularMake = () => {
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
-  console.log(data);
   return <div>test</div>;
 };
 

@@ -158,10 +158,21 @@ export interface ContentSegmentProps {
     | undefined;
 }
 
-export interface CarExtraDetailsProps {
-  carDetails: CarExtraDetails;
-}
-
 export interface popularMakeCarsProps {
   querySearch: CarDetails[];
+}
+
+export interface mediaElementType {
+  id: number;
+  name: string;
+  url: string;
+  createdAt: string;
+  type: string;
+}
+
+export interface CarExtraDetailsProps {
+  singleCarData: CarExtraDetails;
+  singleCarMediaData: {
+    carMediaList: mediaElementType[] | undefined;
+  };
 }
