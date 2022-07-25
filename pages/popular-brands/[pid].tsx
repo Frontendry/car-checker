@@ -15,6 +15,7 @@ import PageHead from "../../components/PageHead";
 import TopSection from "../../components/TopSection";
 import LogoSearchSection from "../../components/LogoSearchSection";
 import ContentSectionPopularSingle from "../../components/ContentSectionPopularSingle";
+import Footer from "../../components/Footer";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -46,6 +47,8 @@ const PopularMake = () => {
         <LogoSearchSection />
         <ContentSectionPopularSingle />
       </brandsContext.Provider>
+
+      <Footer />
     </div>
   );
 };

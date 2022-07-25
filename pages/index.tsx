@@ -16,6 +16,7 @@ import TopSection from "../components/TopSection";
 import LogoSearchSection from "../components/LogoSearchSection";
 import ContentSection from "../components/ContentSection";
 import PageHead from "../components/PageHead";
+import Footer from "../components/Footer";
 
 const Home = (props: BrandsAndCarsContextDataType) => {
   const resData: BrandsAndCarsContextDataType = props;
@@ -28,6 +29,8 @@ const Home = (props: BrandsAndCarsContextDataType) => {
         <LogoSearchSection />
         <ContentSection />
       </brandsAndCarsContext.Provider>
+
+      <Footer />
     </div>
   );
 };

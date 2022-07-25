@@ -15,6 +15,7 @@ import TopSection from "../../components/TopSection";
 import LogoSearchSection from "../../components/LogoSearchSection";
 import ContentSectionCarSingle from "../../components/ContentSectionCarSingle";
 import PageHead from "../../components/PageHead";
+import Footer from "../../components/Footer";
 
 // Axios Instance
 const { axios } = axiosModules;
@@ -30,6 +31,8 @@ const CarPost = (props: CarExtraDetailsProps) => {
         <LogoSearchSection />
         <ContentSectionCarSingle />
       </singleCarContext.Provider>
+
+      <Footer />
     </div>
   );
 };
