@@ -176,3 +176,14 @@ export interface CarExtraDetailsProps {
     carMediaList: mediaElementType[] | undefined;
   };
 }
+
+export interface VehicleDescription {
+  "Engine Type": string | undefined;
+  "Fuel Type": string | undefined;
+  Transmission: string | undefined;
+  "Wheel Type": string | undefined;
+  "Exterior Color": string | undefined;
+  "Interior Color": string | undefined;
+  VIN: string | undefined;
+  "Vehicle ID": string | undefined;
+}

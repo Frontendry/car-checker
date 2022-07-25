@@ -1,6 +1,5 @@
 // Next Modules
 import { GetServerSideProps } from "next";
-import Head from "next/head";
 
 // Config
 import axiosModules from "../config/axios";

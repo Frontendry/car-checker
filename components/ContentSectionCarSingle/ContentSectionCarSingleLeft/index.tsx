@@ -1,6 +1,6 @@
 // Node Modules
-import { useContext, useState } from "react";
-import Image from "next/image";
+import { useContext } from "react";
+import Image from "next/future/image";
 
 // Context
 import singleCarContext from "../../../context/singleCarContext";

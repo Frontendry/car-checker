@@ -1,12 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import Head from "next/head";
 
 // Interfaces
-import {
-  CarDetails,
-  CarExtraDetails,
-  CarExtraDetailsProps,
-} from "../../config/interfaces";
+import { CarDetails, CarExtraDetailsProps } from "../../config/interfaces";
 
 // Config
 import axiosModules from "../../config/axios";
@@ -54,9 +49,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { pid } = context.params!;
-  /*  const res = await axios.get(`${SINGLE_CAR}/${pid}`);
-  const carDetails = (await res.data) as CarExtraDetails;
- */
 
   const endPoints = [`${SINGLE_CAR}/${pid}`, `${SINGLE_CAR_MEDIA}${pid}`];
 

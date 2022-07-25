@@ -1,5 +1,6 @@
 // Components
 import ContentSectionCarSingleLeft from "./ContentSectionCarSingleLeft";
+import ContentSectionCarSingleRight from "./ContentSectionCarSingleRight";
 
 const ContentSectionCarSingle = () => {
   return (
@@ -7,6 +8,7 @@ const ContentSectionCarSingle = () => {
       <div className="container py-xl-4 py-lg-2">
         <div className="row">
           <ContentSectionCarSingleLeft />
+          <ContentSectionCarSingleRight />
         </div>
       </div>
     </div>
